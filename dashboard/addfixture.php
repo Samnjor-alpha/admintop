@@ -99,8 +99,8 @@ include '../helpers/addfixture-helper.php';
                                                 </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="small mb-1" for="afix">About the Fixture</label>
-                                            <textarea class="form-control py-2"  id="afix" name="fixdesc" type="text" placeholder="About fixture"><?= isset($_POST['fixdesc']) ? $_POST['fixdesc'] : ''; ?></textarea>
+                                            <label class="small mb-1" for="article">About the Fixture</label>
+                                            <textarea class="form-control py-2"  id="article" name="fixdesc" type="text" placeholder="About fixture"><?= isset($_POST['fixdesc']) ? $_POST['fixdesc'] : ''; ?></textarea>
                                         </div>
 
                                         <div class="form-group mt-4 mb-0"><button id="btnadd" type="submit" name="addfix"  class="btn btn-primary btn-block">Add Fixture</button></div>

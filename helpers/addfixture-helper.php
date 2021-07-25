@@ -26,7 +26,7 @@ if(!isset($_GET['code'])){
     $competitions = mysqli_query($conn, "select * from competitions");
     if (mysqli_num_rows($competitions) < 1) {
         $comp = BASE_URL . '/dashboard/addcompetition.php';
-        header("refresh:0;url=$comp");
+        header("location:$comp");
         echo "<script>
 alert('Add competition');
 </script>";
@@ -36,7 +36,7 @@ alert('Add competition');
         $teamsa = mysqli_query($conn, "select * from teams");
         if (mysqli_num_rows($teams) < 1) {
             $comp = BASE_URL . '/dashboard/addclub.php';
-            header("refresh:0;url=$comp");
+            header("location:$comp");
             echo "<script>
 alert('Add clubs');
 </script>";
@@ -53,7 +53,7 @@ if (isset($_POST['addfix'])) {
     $ateam = filter_var(stripslashes($_POST['ateam']), FILTER_SANITIZE_STRING);
     $kickoff = filter_var(stripslashes($_POST['kickoff']), FILTER_SANITIZE_STRING);
     $venue = filter_var(stripslashes($_POST['venue']), FILTER_SANITIZE_STRING);
-    $desc=filter_var(stripslashes($_POST['fixdesc']),FILTER_SANITIZE_STRING);
+    $desc=filter_var(stripslashes(htmlentities($_POST['fixdesc'])),FILTER_SANITIZE_STRING);
 
 
 

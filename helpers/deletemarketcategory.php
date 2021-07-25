@@ -7,7 +7,7 @@ $sql = "DELETE FROM mrkt_categories WHERE mrkt_id='$id'";
 
 if (mysqli_query($conn, $sql)) {
     $redirect= BASE_URL. '/dashboard/managemarket.php';
-    header( "refresh:0;url=$redirect" );
+    header( "location:$redirect" );
     echo "<script>
 alert('Deleted successfully');
 </script>";

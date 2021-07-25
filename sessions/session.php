@@ -5,16 +5,6 @@ session_start();
 
 
 
-
-
-
-
-
-
-
-
-
-
         if (!isset($_SESSION['adm_username'])) {
 
 
@@ -26,10 +16,8 @@ session_start();
 
 
             $logout= BASE_URL. '/auth/login.php';
-            header( "refresh:0;url=$logout" );
-            echo "<script>
-alert('loggin to continue');
-</script>";
+            header( "location:$logout" );
+
 
 
 
@@ -56,10 +44,8 @@ alert('loggin to continue');
                 session_destroy();
 
                 $logout= BASE_URL. '/auth/login.php';
-                header( "refresh:0;url=$logout" );
-                echo "<script>
-alert('Session timeout');
-</script>";
+                header( "location:$logout" );
+
                 }
 
 

@@ -51,9 +51,11 @@ if (isset($_POST['addclub'])) {
 
                         $sql = "INSERT INTO teams SET team_region='$region',team_name='$clubname',team_logo='$logo',abt_team='$desc'";
                         if (mysqli_query($conn, $sql)) {
+                            echo "<script type='text/javascript'>
+  					alert( 'Club added successfully!!');
+  						window.location.href='../dashboard/addclub.php';
+</script>";
 
-                            $msg="Club added successfully!!";
-                            $msg_class=" alert-success";
 
 
                         }else{

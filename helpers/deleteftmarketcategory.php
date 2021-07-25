@@ -10,7 +10,7 @@ if(mysqli_query($conn,$update_m)){
     $sql = "DELETE FROM ftmarkets WHERE mrkt_id='$id'";
     if (mysqli_query($conn, $sql)) {
         $redirect= BASE_URL. '/dashboard/managemarket.php';
-        header( "refresh:0;url=$redirect" );
+        header( "location:$redirect" );
         echo "<script>
 alert('Deleted successfully');
 </script>";

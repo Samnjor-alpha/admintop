@@ -2,14 +2,6 @@
     box-sizing: border-box;
 }
 
-.wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image:url("https://telegra.ph/file/b62b756beddf5ef306310.jpg");
-background-color: #8fd19e;
-    height: 50vh;
-}
 
 
 
@@ -41,29 +33,12 @@ background-color: #8fd19e;
     font-size: .7em;
 }
 
-* {
-    box-sizing: border-box;
-}
 
 
 
 
-.content {
-    animation-delay: 0.3s;
-    position: relative;
-    left: 20px;
-    margin-top: 5px;
 
-}
-.details{
 
-    font-size: 13px;
-
-    color: #000;
-    margin: 20px 20px;
-    position: center;
-
-}
 .scores{
 
     font-size: 13px;
@@ -71,24 +46,6 @@ background-color: #8fd19e;
     color: #000;
     margin: 10px 10px;
     position: center;
-
-}
-p {
-
-    font-size: 13px;
-
-    color: #aaa;
-    margin: 20px 20px;
-
-}
-.outer {
-    position: relative;
-    background: #fff;
-    height: 300px;
-    width: 550px;
-    overflow: hidden;
-    display: flex;
-    border-radius: 10px;
 
 }
 .button {

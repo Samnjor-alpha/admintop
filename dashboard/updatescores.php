@@ -38,7 +38,7 @@ include '../helpers/updatescoreshelper.php';
                             <?php endif; ?>
 
                         </div>
-                        <div class="container">
+                       
                             <div class="alert alert-secondary" role="alert">
                                 <h3 class="text-center">Today Matches</h3>
                             </div>
@@ -49,7 +49,7 @@ include '../helpers/updatescoreshelper.php';
                                 $row_comp=$comps->fetch_assoc();
 
                                     ?>
-                                <div class="card">
+                                <div class="card h-100">
                                     <div class="card-header">
                                         <a class="text-primary" data-toggle="collapse"
                                            href="#collapse<?php echo $i; ?>">
@@ -98,17 +98,16 @@ include '../helpers/updatescoreshelper.php';
                                     <div id="collapse<?php echo $i; ?>" class="collapse <?php if ($i == 1) {
                                         echo 'show';
                                     } ?>" data-parent="#accordion">
-                                        <div class="card-body justify-content-center align-content-center">
-                                            <div class="wrapper mb-2">
+                                        <div class="card h-100">
+                                            <div class="card-body ">
 
-                                                <div class="outer">
-                                                    <div class="content">
-                                                        <h4 class="text-center">Match Details</h4>
+
+
                                                         <span class="<? echo $statusclass?> animated fadeInDown"><?echo $status ?></span>
                                                                          <div class="desc">
                                                                              <h5 class="text-center text-capitalize"> <img src="<? echo $row_comp['comp_logo']?>" style="border-radius:50%;height: 40px"  alt="logo"> <? echo $row_comp['comp_name'] ?></h5>
 
-                                                            <p>  <? echo $fix_row['fix_desc'] ?></p>
+                                                            <p class="flex-wrap">  <? echo htmlspecialchars_decode($fix_row['fix_desc']) ?></p>
 
                                                         </div>
                                                         <div class="details text-capitalize ">
@@ -117,8 +116,8 @@ include '../helpers/updatescoreshelper.php';
                                                                <li><i class="fal fa-analytics"></i> : <? echo $fix_row['tipped']?> </li>
                                                            </ul>
                                                         </div>
-                                                        <hr>
-<div class="row scores">
+
+<div class="row mt-mb-15">
     <div class="col-md-6">
     <? if ($fix_row['ht_hscore']>=0 && $fix_row['ht_ascore']>=0){?>
         Half Time: <?echo $fix_row['ht_hscore'] ?> : <? echo $fix_row['ht_ascore']?>
@@ -126,7 +125,7 @@ include '../helpers/updatescoreshelper.php';
         Half Time: --:--
     <? }?>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 mt-mb-15">
     <? if ($fix_row['ft_hscore']>=0 && $fix_row['ft_ascore']>=0){?>
         Full Time: <?echo $fix_row['ft_hscore'] ?> : <? echo $fix_row['ft_ascore']?>
     <? }else{ ?>
@@ -222,7 +221,7 @@ include '../helpers/updatescoreshelper.php';
                                     }?>
 
 
-                                </div>
+
                             </div>
 
 
@@ -232,13 +231,13 @@ include '../helpers/updatescoreshelper.php';
 
 
 
-                </div>
+
 
 
         </main>
         <?php require_once '../navs/footer.php' ?>
     </div>
-</div>
+
 <? include '../public/dashboardscripts.php' ?>
 <script type="text/javascript">
     $(document).ready(function() {
