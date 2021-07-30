@@ -1,8 +1,8 @@
 <?php
-date_default_timezone_set("Africa/Nairobi");
+date_default_timezone_set($time_zone);
 $today=date('Y-m-d');
 
-$updatetodayscores=mysqli_query($conn,"select * from fixtures where DATE('kick_off') <= DATE($today) and status='0' or status='1' order by status ASC, kick_off ASC");
+$updatetodayscores=mysqli_query($conn,"select * from fixtures where  status='0' or status='1' order by status ASC, kick_off ASC");
 
 if (mysqli_num_rows($updatetodayscores)<1){
     echo "<script>

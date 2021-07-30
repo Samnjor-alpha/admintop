@@ -1,6 +1,7 @@
 <?php
-define('BASE_URL', 'https://localhost/admintop/');
 session_start();
+define('BASE_URL', 'https://localhost/admintop/');
+
 
     session_unset();
     session_destroy();

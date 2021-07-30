@@ -1,8 +1,5 @@
-
-<?php
+<?php session_start();
 include '../config/config.php';
-session_start();
-
 
 
         if (!isset($_SESSION['adm_username'])) {

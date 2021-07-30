@@ -1,8 +1,13 @@
 <?php
 
 
+$time_zone = getTimeZoneFromIpAddress();
 
-
+try {
+    $date = new DateTime("now", new DateTimeZone('America/New_York'));
+} catch (Exception $e) {
+}
+$date->format('Y-m-d H:i:s');
 
 
 
@@ -61,7 +66,7 @@ if(isset($_POST['addarticle'])) {
                     if (empty($error)) {
                         $sql = "INSERT INTO articles SET slug='" . $slug . "',
 excerpt='" . $excerpt . "', img='" . $external_link . "', 
-author='" . $author . "', tittle='" . $title . "',article='" . $article . "',posted_at=NOW()";
+author='" . $author . "', tittle='" . $title . "',article='" . $article . "',posted_at='".$date."'";
 
                         if (mysqli_query($conn, $sql)) {
 

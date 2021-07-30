@@ -1,3 +1,4 @@
+<? include '../helpers/authhelper.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +15,7 @@
 
 
 </head>
-<? include '../helpers/authhelper.php' ?>
+
 <body class="registerbg">
 <div id="layoutAuthentication">
     <div id="layoutAuthentication_content">
