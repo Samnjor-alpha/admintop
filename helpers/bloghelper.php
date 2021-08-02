@@ -3,11 +3,9 @@
 
 $time_zone = getTimeZoneFromIpAddress();
 
-try {
-    $date = new DateTime("now", new DateTimeZone('America/New_York'));
-} catch (Exception $e) {
-}
-$date->format('Y-m-d H:i:s');
+$date = new DateTime("now", new DateTimeZone($time_zone) );
+$fin= $date->format('Y-m-d H:i:s');
+
 
 
 
@@ -66,7 +64,7 @@ if(isset($_POST['addarticle'])) {
                     if (empty($error)) {
                         $sql = "INSERT INTO articles SET slug='" . $slug . "',
 excerpt='" . $excerpt . "', img='" . $external_link . "', 
-author='" . $author . "', tittle='" . $title . "',article='" . $article . "',posted_at='".$date."'";
+author='" . $author . "', tittle='" . $title . "',article='" . $article . "',posted_at='".$fin."'";
 
                         if (mysqli_query($conn, $sql)) {
 

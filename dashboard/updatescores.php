@@ -47,7 +47,6 @@ include '../helpers/updatescoreshelper.php';
                                     $cid=$fix_row['c_id'];
                                     $comps=mysqli_query($conn,"select * from competitions where comp_id='$cid'");
                                 $row_comp=$comps->fetch_assoc();
-
                                     ?>
                                 <div class="card h-100">
                                     <div class="card-header">
@@ -95,9 +94,7 @@ include '../helpers/updatescoreshelper.php';
                                         $statusclass='bg-finished';
                                     }
                                     ?>
-                                    <div id="collapse<?php echo $i; ?>" class="collapse <?php if ($i == 1) {
-                                        echo 'show';
-                                    } ?>" data-parent="#accordion">
+                            <div id="collapse<?php echo $i; ?>" class="collapse <?php if ($i == 1) { echo 'show';} ?>" data-parent="#accordion">
                                         <div class="card h-100">
                                             <div class="card-body ">
 
@@ -138,8 +135,8 @@ include '../helpers/updatescoreshelper.php';
 
 
 
-                                                </div>
-                                            </div>
+
+
                                             <?
                                             $time=$fix_row['kick_off'];
                                             $dy=$fix_row['kick_off'];
@@ -156,7 +153,7 @@ include '../helpers/updatescoreshelper.php';
                                                 $msg='alert-info';
                                             }else{
                                              ?>
-                                            <form class="form-inline" method="post" action="">
+                                            <form class="form-inline justify-content-center mb-2 mt-1" method="post" action="">
     <div class="row">
         <div class="col-md-4">
     <div class="form-group">
@@ -185,7 +182,7 @@ include '../helpers/updatescoreshelper.php';
 
                                                     $sql = mysqli_query($conn, "UPDATE fixtures SET  status='2' where f_id='$gameid'");
                                                 }else{?>
-                                            <form class="form-inline mt-4" method="post" action="">
+                                            <form class="form-inline justify-content-center mb-2 mt-1" method="post" action="">
 
                                                 <div class="row">
 
@@ -212,20 +209,26 @@ include '../helpers/updatescoreshelper.php';
                                             }?>
 
 
-
+</div>
                                         </div>
+                                    <?php $i++;}?>
                                     </div>
-                                    <?php $i++;
-
-
-                                    }?>
 
 
 
-                            </div>
+
+
+
+
+
 
 
                         </div>
+
+                    </div>
+
+                </div>
+
                     </div>
 
 
