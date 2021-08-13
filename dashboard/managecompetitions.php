@@ -52,7 +52,7 @@ include '../helpers/addcompetition-helper.php';
                                                 <? while ($rowcomp=$competitions->fetch_assoc()){
                           ?>
                                                 <tr>
-                                                    <td><img src="<? echo $rowcomp['comp_logo']?>" style="border-radius:50%;height: 40px" class="img-thumbnail" alt="logo"></td>
+                                                    <td><img src="<? echo $rowcomp['comp_logo']?>" style="border-radius:50%;height: 40px"  alt="logo"></td>
                                                     <td><? echo $rowcomp['comp_region']?></td>
                                                     <td><? echo $rowcomp['comp_name']?></td>
                                                     <td><? echo $rowcomp['comp_fixtures_no'] ?></td>

@@ -2,7 +2,7 @@
 $msg = "";
 $msg_class = "";
 
-
+$countries=mysqli_query($conn,"select * from teams group by team_region");
 //insert teams
 if (isset($_POST['addclub'])) {
     //    $cpwd = stripslashes($_POST['cpassword']);
@@ -75,5 +75,47 @@ if (isset($_POST['addclub'])) {
 }
 
 //Query teams
+if (isset($_POST['filter'])){
+    $region=$_POST['region'];
+    if (isset($_GET['page_no']) && $_GET['page_no']!="") {
+        $page_no = $_GET['page_no'];
+        $region=$_POST['region'];
+    } else {
+        $page_no = 1;
+    }
 
-$teams=mysqli_query($conn,"Select * from teams");
+    $total_records_per_page = 10;
+    $offset = ($page_no-1) * $total_records_per_page;
+    $previous_page = $page_no - 1;
+    $next_page = $page_no + 1;
+    $adjacents = "2";
+
+    $result_count = mysqli_query($conn,"SELECT COUNT(*) As total_records FROM teams where team_region LIKE '%{$region}%'");
+    $total_records = mysqli_fetch_array($result_count);
+    $total_records = $total_records['total_records'];
+    $total_no_of_pages = ceil($total_records / $total_records_per_page);
+    $second_last = $total_no_of_pages - 1; // total page minus 1
+
+    $teams = mysqli_query($conn, "Select * from teams where team_region LIKE '%{$region}%' order by team_name asc LIMIT $offset, $total_records_per_page");
+}else {
+
+    if (isset($_GET['page_no']) && $_GET['page_no']!="") {
+        $page_no = $_GET['page_no'];
+    } else {
+        $page_no = 1;
+    }
+
+    $total_records_per_page = 10;
+    $offset = ($page_no-1) * $total_records_per_page;
+    $previous_page = $page_no - 1;
+    $next_page = $page_no + 1;
+    $adjacents = "2";
+
+    $result_count = mysqli_query($conn,"SELECT COUNT(*) As total_records FROM teams");
+    $total_records = mysqli_fetch_array($result_count);
+    $total_records = $total_records['total_records'];
+    $total_no_of_pages = ceil($total_records / $total_records_per_page);
+    $second_last = $total_no_of_pages - 1; // total page minus 1
+
+    $teams = mysqli_query($conn, "Select * from teams   order by team_name asc LIMIT $offset, $total_records_per_page");
+}

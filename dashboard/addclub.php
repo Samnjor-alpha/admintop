@@ -81,11 +81,26 @@ include '../helpers/addclub-helper.php';
                                        Clubs
                                     </div>
                                     <div class="card-body">
+                                        <form class="form-inline form-group" method="post" action="">
+                                            <div class="frm-group">
+                                                <label for="comp"></label><select name="region" class="form-control" id="comp">
+                                                    <option disabled selected>Filter by country</option>
+                                                    <? while ($rowcountry=$countries->fetch_assoc()){ ?>
+                                                        <option value="<? echo $rowcountry['team_region'] ?>"><? echo $rowcountry['team_region'] ?></option>
+                                                    <? } ?>
+                                                </select>
+                                            </div>
+
+                                            <div class="frm-group ml-2 mr-2">
+                                                <button type="submit" name="filter" class="btn btn-info btn-block">Filter</button>
+                                            </div>
+                                        </form>
                                         <div class="table-responsive">
-                                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                            <table class="table table-bordered">
+
                                                 <thead>
                                                 <tr>
-                                                    <th>Icon</th>
+                                                    <th>Logo</th>
                                                     <th>Region</th>
                                                     <th>Club</th>
 
@@ -95,7 +110,7 @@ include '../helpers/addclub-helper.php';
                                                 <tbody>
                                                 <? while ($rowteam=$teams->fetch_assoc()){?>
                                                 <tr>
-                                                    <td class="text-center"><img src="<? echo $rowteam['team_logo']?>" style="border-radius:50%;height: 50px; width:50px;" class="img-thumbnail" alt="logo"></td>
+                                                    <td class="text-center"><img src="<? echo $rowteam['team_logo']?>" style="border-radius:50%;height: 50px; width:50px;"  alt="logo"></td>
                                                     <td><? echo $rowteam['team_region']?></td>
                                                     <td><? echo $rowteam['team_name']?></td>
 
@@ -103,7 +118,22 @@ include '../helpers/addclub-helper.php';
 
                                                 </tbody>
                                                 <? }?>
+
                                             </table>
+                                            <?php if ($total_no_of_pages>0){ ?>
+                                                <div class="">
+
+                                                    <div class="justify-content-center" style='padding: 10px 20px 0px; border-top: dotted 1px #CCC;'>
+                                                        <strong>Page <?php echo $page_no." of ".$total_no_of_pages; ?></strong>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+
+                                                            <? include 'pagination.php'?>
+                                                        </div><!-- end col -->
+                                                    </div><!-- end row -->
+                                                </div>
+                                            <?}?>
                                         </div>
                                     </div>
                                 </div>

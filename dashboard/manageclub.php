@@ -52,7 +52,7 @@ include '../helpers/addclub-helper.php';
                                                 <tbody>
                                                 <? while ($rowteam=$teams->fetch_assoc()){?>
                                                 <tr>
-                                                    <td class="text-center"><img src="<? echo $rowteam['team_logo']?>" style="border-radius:50%;height: 50px; width:50px;" class="img-thumbnail" alt="logo"></td>
+                                                    <td class="text-center"><img src="<? echo $rowteam['team_logo']?>" style="border-radius:50%;height: 50px; width:50px;"  alt="logo"></td>
                                                     <td><? echo $rowteam['team_region']?></td>
                                                     <td><? echo $rowteam['team_name']?></td>
                                                     <td><a href="editclub.php?clubid=<? echo $rowteam['team_id']?>"><i class="text-success fal fa-edit"></i></a>| <a href="../helpers/deleteclub.php?clubid=<? echo $rowteam['team_id']?>"><i class="text-danger fal fa-trash"></i></a></td>

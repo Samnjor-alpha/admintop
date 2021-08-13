@@ -67,7 +67,7 @@ include '../helpers/updatescoreshelper.php';
 
 
                                                     <h5>
-                                                        <img src="<? echo geteamLogoById($fix_row['h_team'])?>" style="border-radius:50%;height: 50px; width:50px;" class="img-thumbnail" alt="logo">
+                                                        <img src="<? echo geteamLogoById($fix_row['h_team'])?>" style="border-radius:50%;height: 50px; width:50px;"  alt="logo">
                                                         <?php
                                                     $gameid=$fix_row['f_id'];
                                                     echo geteamNameById($fix_row['h_team'])?>
@@ -75,7 +75,7 @@ include '../helpers/updatescoreshelper.php';
                                                 <h6 class=" col-2 col-sm-2 text-center">VS</h6>
                                                 <div class="col-4 col-sm-4 text-right">
                                                     <h5>
-                                                        <img src="<? echo geteamLogoById($fix_row['a_team'])?>" style="border-radius:50%;height: 50px; width:50px;" class="img-thumbnail" alt="logo">
+                                                        <img src="<? echo geteamLogoById($fix_row['a_team'])?>" style="border-radius:50%;height: 50px; width:50px;"  alt="logo">
                                                         <?php
                                                         echo geteamNameById($fix_row['a_team']) ?></h5></div>
                                             </div>
@@ -143,7 +143,8 @@ include '../helpers/updatescoreshelper.php';
                                             $date2 = new DateTime("$dy");
 
                                              $dt2=$date2->format("Y-m-d H:i");
-                                            $curtime= date('Y-m-d H:i');
+                                            $cur = new DateTime("now");
+                                            $curtime=$cur->format("Y-m-d H:i");
 
                                             if(($curtime >=$dt2)) {
 

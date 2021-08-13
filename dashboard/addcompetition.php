@@ -81,6 +81,20 @@ include '../helpers/addcompetition-helper.php';
                                    Competitions
                                 </div>
                                 <div class="card-body">
+                                    <form class="form-inline form-group" method="post" action="">
+                                        <div class="frm-group">
+                                            <label for="comp"></label><select name="region" class="form-control" id="comp">
+                                                <option disabled selected>Filter by country</option>
+                                                <? while ($rowcountry=$countries->fetch_assoc()){ ?>
+                                                    <option value="<? echo $rowcountry['team_region'] ?>"><? echo $rowcountry['team_region'] ?></option>
+                                                <? } ?>
+                                            </select>
+                                        </div>
+
+                                        <div class="frm-group ml-2 mr-2">
+                                            <button type="submit" name="filter" class="btn btn-info btn-block">Filter</button>
+                                        </div>
+                                    </form>
                                     <div class="table-responsive">
                                         <table class="table table-bordered"  >
                                             <thead>
@@ -95,7 +109,7 @@ include '../helpers/addcompetition-helper.php';
                                             <tbody>
                                             <? while ($rowcomp=$competitions->fetch_assoc()){?>
                                             <tr>
-                                                <td><img src="<? echo $rowcomp['comp_logo']?>" style="border-radius:50%;height: 40px" class="img-thumbnail" alt="logo"></td>
+                                                <td><img src="<? echo $rowcomp['comp_logo']?>" style="border-radius:50%;height: 40px"  alt="logo"></td>
                                             <td><? echo $rowcomp['comp_region']?></td>
                                                 <td><? echo $rowcomp['comp_name']?></td>
                                                 <td><? echo $rowcomp['comp_fixtures_no'] ?></td>
@@ -105,6 +119,20 @@ include '../helpers/addcompetition-helper.php';
                                             <? }?>
                                         </table>
                                     </div>
+                                    <?php if ($total_no_of_pages>0){ ?>
+                                        <div class="">
+
+                                            <div class="justify-content-center" style='padding: 10px 20px 0px; border-top: dotted 1px #CCC;'>
+                                                <strong>Page <?php echo $page_no." of ".$total_no_of_pages; ?></strong>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+
+                                                    <? include 'pagination.php'?>
+                                                </div><!-- end col -->
+                                            </div><!-- end row -->
+                                        </div>
+                                    <?}?>
                                 </div>
                             </div>
                         </div>

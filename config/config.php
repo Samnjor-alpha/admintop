@@ -9,11 +9,11 @@ function getTimeZoneFromIpAddress()
 {
     $clientsIpAddress = get_client_ip();
 
-    $clientInformation = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip=' . $clientsIpAddress));
+    $clientInformation = unserialize(file_get_contents('http://ip-api.com/php/?fields' . $clientsIpAddress));
 
-    $clientsLatitude = $clientInformation['geoplugin_latitude'];
-    $clientsLongitude = $clientInformation['geoplugin_longitude'];
-    $clientsCountryCode = $clientInformation['geoplugin_countryCode'];
+    $clientsLatitude = $clientInformation['lat'];
+    $clientsLongitude = $clientInformation['lon'];
+    $clientsCountryCode = $clientInformation['countryCode'];
 
     $timeZone = get_nearest_timezone($clientsLatitude, $clientsLongitude, $clientsCountryCode);
 

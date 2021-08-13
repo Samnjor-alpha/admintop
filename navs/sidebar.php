@@ -16,17 +16,8 @@
                     <a class="nav-link" href="<? echo BASE_URL?>/dashboard/managecompetitions.php">Manage Competitions</a>
                 </nav>
             </div>
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayoutss"
-               aria-expanded="false" aria-controls="collapseLayouts">
-                <div class="sb-nav-link-icon"><i class="fal fa-analytics"></i></div>Competition stats
-                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
-                ></a>
-            <div class="collapse" id="collapseLayoutss" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
-                <nav class="sb-sidenav-menu-nested nav">
-                    <a class="nav-link" href="">View stats</a>
 
-                </nav>
-            </div>
+
             <div class="sb-sidenav-menu-heading">Football clubs</div>
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#clubs" aria-expanded="false" aria-controls="collapseLayouts"
             ><div class="sb-nav-link-icon"><i class="fal fa-project-diagram"></i></div>Add Clubs
@@ -38,21 +29,11 @@
                     <a class="nav-link" href="<? echo BASE_URL?>/dashboard/manageclub.php">View Clubs</a>
                 </nav>
             </div>
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#manageclubs"
-               aria-expanded="false" aria-controls="collapseLayouts">
-                <div class="sb-nav-link-icon"><i class="fal fa-cogs"></i></div>Manage Clubs
-                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
-                ></a>
-            <div class="collapse" id="manageclubs" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
-                <nav class="sb-sidenav-menu-nested nav">
-                    <a class="nav-link" href="">View stats</a>
 
-                </nav>
-            </div>
             <div class="sb-sidenav-menu-heading">Matches to be tipped</div>
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayoutsm" aria-expanded="false" aria-controls="collapseLayouts">
                 <div class="sb-nav-link-icon"><i class="fas fa-futbol"></i></div>
- Games
+Fixtures
                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
             <div class="collapse" id="collapseLayoutsm" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
@@ -89,17 +70,7 @@
                     <a class="nav-link" href="<? echo BASE_URL?>/dashboard/managemarket.php">Manage Markets</a>
                 </nav>
             </div>
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayoutpmrkts"
-               aria-expanded="false" aria-controls="collapseLayouts">
-                <div class="sb-nav-link-icon"><i class="fal fa-analytics"></i></div>Popular Market stats
-                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
-                ></a>
-            <div class="collapse" id="collapseLayoutpmrkts" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
-                <nav class="sb-sidenav-menu-nested nav">
-                    <a class="nav-link" href="<? echo BASE_URL?>/dashboard/marketstats.php">View stats</a>
 
-                </nav>
-            </div>
             <div class="sb-sidenav-menu-heading">Users & Tipstars</div>
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayoutsuser" aria-expanded="false" aria-controls="collapseLayoutsuser">
                 <div class="sb-nav-link-icon"><i class="fal fa-users-crown"></i></div>Users
